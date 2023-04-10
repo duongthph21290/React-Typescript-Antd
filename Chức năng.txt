@@ -1,0 +1,10 @@
++ Thêm, sửa, xóa sản phẩm ( Có validate khi thêm, có chuyển trang, có message khi thêm, sửa. Có confirm khi xóa)
++ Thêm danh mục. ( Có validate)
++ Phân trang sản phẩm
++ Tìm kiếm theo tên sản phẩm ( Admin )
++ Trang list tất cả thông tin sản phẩm
++ Chi tiết sản phẩm 
++ Đăng nhập ( Có validate )
++ Đăng kí  ( Có validate )
++ Đăng xuất
++ Tìm kiếm theo tên sản phẩm ( Client )
