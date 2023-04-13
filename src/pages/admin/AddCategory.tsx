@@ -39,7 +39,8 @@ const AddCategory = () => {
                 <Form.Item
                     label="Category Name"
                     name="name"
-                    rules={[{ required: true, message: 'Please input the category name!' }]}
+                    rules={[{ required: true, message: 'Please input the category name!' },
+                    { whitespace: true }]}
                 >
                     <Input />
                 </Form.Item>

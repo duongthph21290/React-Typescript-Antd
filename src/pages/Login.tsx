@@ -10,7 +10,7 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState([]);
 
-  const onFinish = (values : Iproduct ) => {
+  const onFinish = (values: Iproduct) => {
     axios.post('http://localhost:8080/api/signin/', values)
       .then((response) => {
         // Lưu thông tin người dùng vào localStorage
@@ -32,7 +32,7 @@ const Login: React.FC = () => {
       });
   };
   // Một hàm xử lý khi form đăng nhập hoặc đăng ký thất bại
-  const onFinishFailed = (errorInfo : any) => {
+  const onFinishFailed = (errorInfo: any) => {
     // console.log('Failed:', errorInfo); // nhận vào tham số errorInfo là một đối tượng chứa thông tin về lỗi
   };
 
@@ -58,7 +58,8 @@ const Login: React.FC = () => {
         <Form.Item
           label="Email"
           name="email"
-          rules={[{ required: true, message: 'Please input your email!' }]}
+          rules={[{ required: true, message: 'Please input your email!' },
+          { whitespace: true }]}
         >
           <Input />
         </Form.Item>
@@ -66,7 +67,8 @@ const Login: React.FC = () => {
         <Form.Item
           label="Password"
           name="password"
-          rules={[{ required: true, message: 'Please input your password!' }]}
+          rules={[{ required: true, message: 'Please input your password!' },
+          { whitespace: true }]}
         >
           <Input.Password />
         </Form.Item>

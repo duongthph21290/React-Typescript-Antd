@@ -69,7 +69,8 @@ const UpdateProductPage = (props: Iproduct) => {
                 <Form.Item
                     label="Cập nhật tên sản phẩm"
                     name="name"
-                    rules={[{ required: true, message: 'Please input your products!' }]}
+                    rules={[{ required: true, message: 'Please input your products!' },
+                    { whitespace: true }]}
                 >
                     <Input />
                 </Form.Item>
@@ -77,14 +78,16 @@ const UpdateProductPage = (props: Iproduct) => {
                 <Form.Item
                     label="Cập nhật mô tả sản phẩm"
                     name="des"
-                    rules={[{ required: true, message: 'Please input your description!' }]}
+                    rules={[{ required: true, message: 'Please input your description!' },
+                    { whitespace: true }]}
                 >
                     <Input />
                 </Form.Item>
                 <Form.Item
                     label="Cập nhật tác giả sản phẩm"
                     name="author"
-                    rules={[{ required: true, message: 'Please input author name!' }]}
+                    rules={[{ required: true, message: 'Please input author name!' },
+                    { whitespace: true }]}
                 >
                     <Input />
                 </Form.Item>
@@ -92,7 +95,8 @@ const UpdateProductPage = (props: Iproduct) => {
                 <Form.Item
                     label="Cập nhật giá sản phẩm"
                     name="price"
-                    rules={[{ required: true, message: 'Please input product price!' }]}
+                    rules={[{ required: true, message: 'Please input product price!' },
+                    { whitespace: true }]}
                 >
                     <Input />
                 </Form.Item>
@@ -100,7 +104,8 @@ const UpdateProductPage = (props: Iproduct) => {
                 <Form.Item
                     label="Cập nhật danh mục sản phẩm"
                     name="categoryId"
-                    rules={[{ required: true, message: 'Please select a category!' }]}
+                    rules={[{ required: true, message: 'Please select a category!' },
+                    { whitespace: true }]}
                 >
                     <Select>
                         {categories.map((category: Iproduct) => (

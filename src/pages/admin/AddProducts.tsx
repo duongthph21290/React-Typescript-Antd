@@ -42,7 +42,9 @@ const AddProductPage = (props: Iproduct) => {
                     label="Nhập tên sản phẩm"
                     name="name"
                     hasFeedback
-                    rules={[{ required: true, message: 'Please input your products!' }]}
+                    rules={[{ required: true, message: 'Please input your products!' },
+                    { whitespace: true }]}
+                    
                 >
                     <Input />
                 </Form.Item>
@@ -51,7 +53,8 @@ const AddProductPage = (props: Iproduct) => {
                     label="Nhập mô tả sản phẩm"
                     name="des"
                     hasFeedback
-                    rules={[{ required: true, message: 'Please input your description!' }]}
+                    rules={[{ required: true, message: 'Please input your description!' },
+                    { whitespace: true }]}
                 >
                     <Input />
                 </Form.Item>
@@ -59,7 +62,8 @@ const AddProductPage = (props: Iproduct) => {
                     label="Nhập tác giả sản phẩm"
                     name="author"
                     hasFeedback
-                    rules={[{ required: true, message: 'Please input your author!' }]}
+                    rules={[{ required: true, message: 'Please input your author!' },
+                    { whitespace: true }]}
                 >
                     <Input />
                 </Form.Item>
@@ -67,7 +71,8 @@ const AddProductPage = (props: Iproduct) => {
                     label="Nhập giá sản phẩm"
                     name="price"
                     hasFeedback
-                    rules={[{ required: true, message: 'Please input your price!' }]}
+                    rules={[{ required: true, message: 'Please input your price!' },
+                    { whitespace: true }]}
                 >
                     <Input />
                 </Form.Item>
@@ -77,7 +82,8 @@ const AddProductPage = (props: Iproduct) => {
                 <Form.Item
                     label="Category ID"
                     name="categoryId"
-                    rules={[{ required: true, message: 'Please select your category!' }]}
+                    rules={[{ required: true, message: 'Please select your category!' },
+                    { whitespace: true }]}
                 >
                     <Select placeholder="Select a category">
                         {categories.map((category: Iproduct) => (

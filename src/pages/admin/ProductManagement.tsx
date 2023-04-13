@@ -46,6 +46,7 @@ const ProductManagementPage = (props: Iprops) => {
         setSearchText(value);
     };
 
+    // Lọc data từ filter 
     const filteredData = data.filter((item) =>
         item.name.toLowerCase().includes(searchText.toLowerCase())
     );

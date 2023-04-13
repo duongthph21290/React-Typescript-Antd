@@ -2,9 +2,9 @@ import React from 'react';
 import { Button, Form, Input, message } from 'antd';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Iproduct } from '../types/products'; 
+import { Iproduct } from '../types/products';
 
-  
+
 
 const Register: React.FC = () => {
     const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Register: React.FC = () => {
         }
     };
 
-    const onFinishFailed = (errorInfo : any) => {
+    const onFinishFailed = (errorInfo: any) => {
         // console.log('Failed:', errorInfo);
     };
 
@@ -43,14 +43,16 @@ const Register: React.FC = () => {
                 <Form.Item
                     label="Name"
                     name="name"
-                    rules={[{ required: true, message: 'Please input your username!' }]}
+                    rules={[{ required: true, message: 'Please input your username!' },
+                    { whitespace: true }]}
                 >
                     <Input />
                 </Form.Item>
                 <Form.Item
                     label="Email"
                     name="email"
-                    rules={[{ required: true, message: 'Please input your email!' }]}
+                    rules={[{ required: true, message: 'Please input your email!' },
+                    { whitespace: true }]}
                 >
                     <Input />
                 </Form.Item>
@@ -58,7 +60,8 @@ const Register: React.FC = () => {
                 <Form.Item
                     label="Password"
                     name="password"
-                    rules={[{ required: true, message: 'Please input your password!' }]}
+                    rules={[{ required: true, message: 'Please input your password!' },
+                    { whitespace: true }]}
                 >
                     <Input.Password />
                 </Form.Item>
@@ -66,7 +69,8 @@ const Register: React.FC = () => {
                 <Form.Item
                     label="Confirm Password"
                     name="confirmpassword"
-                    rules={[{ required: true, message: 'Please input your confirmpassword!' }]}
+                    rules={[{ required: true, message: 'Please input your confirmpassword!' },
+                    { whitespace: true }]}
                 >
                     <Input.Password />
                 </Form.Item>
