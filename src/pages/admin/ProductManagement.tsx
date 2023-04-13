@@ -8,7 +8,7 @@ interface Iprops {
     products: Iproduct[];
     id: Iproduct[];
 }
-const ProductManagementPage = (props : Iprops) => {
+const ProductManagementPage = (props: Iprops) => {
     const [searchText, setSearchText] = useState('');
     const [categories, setCategories] = useState([]);
 
@@ -22,7 +22,7 @@ const ProductManagementPage = (props : Iprops) => {
             })
     }, []);
 
-    const data = props.products.map((item : Iproduct, index) => {
+    const data = props.products.map((item: Iproduct, index) => {
         return {
             key: index + 1,
             id: item._id,
@@ -34,15 +34,15 @@ const ProductManagementPage = (props : Iprops) => {
         }
     });
 
-    const onHandleRemove = (id : Iproduct ) => {
+    const onHandleRemove = (id: Iproduct) => {
         const isConfirm = window.confirm('Bạn có chắc chắn muốn xóa sản phẩm này không?');
         if (isConfirm) {
             props.onRemove(id);
         }
     };
 
-// Tìm kiếm theo tên sản phẩm
-    const onSearch = (value : string) => {
+    // Tìm kiếm theo tên sản phẩm
+    const onSearch = (value: string) => {
         setSearchText(value);
     };
 
@@ -50,7 +50,7 @@ const ProductManagementPage = (props : Iprops) => {
         item.name.toLowerCase().includes(searchText.toLowerCase())
     );
 
-    const categoryOptions = categories.map(category  => {
+    const categoryOptions = categories.map(category => {
         return (
             <Select.Option key={category._id} value={category._id}>
                 {category.name}
@@ -88,7 +88,7 @@ const ProductManagementPage = (props : Iprops) => {
             title: 'CategoryId',
             dataIndex: 'categoryId',
             key: 'categoryId',
-            render: (categoryId : Iproduct) => {
+            render: (categoryId: Iproduct) => {
                 const category = categories.find(cat => cat._id === categoryId);
                 return category ? category.name : '';
             },
@@ -104,12 +104,12 @@ const ProductManagementPage = (props : Iprops) => {
             // là một hàm lọc cho cột "Category". Khi người dùng chọn một danh mục trong Select, 
             // nó sẽ lọc bảng sản phẩm theo danh mục tương ứng. Hàm này so sánh giá trị categoryId trong bản ghi với giá trị được chọn
             //  trong Select và trả về true nếu chúng giống nhau.
-            onFilter: (value : any, record : any) => record.categoryId === value,
+            onFilter: (value: any, record: any) => record.categoryId === value,
         },
         {
             title: 'Nút ấn',
             key: 'Nút ấn',
-            render: (data : Iproduct) => (
+            render: (data: Iproduct) => (
                 <Space size="middle">
                     <Button type='primary' ><Link style={{ textDecorationLine: 'none' }} to={`${data.id}/update`}>Update</Link></Button>
                     <Button type='primary' danger onClick={() => onHandleRemove(data.id)}>Detele</Button>

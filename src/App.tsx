@@ -101,9 +101,9 @@ function App() {
               <Route path=":id/update" element={<UpdateProductPage onUpdate={onHandleUpdate} products={products} />} />
             </Route>
             <Route path="category">
-              <Route index element={<CategoryManagement products={products} onRemove={onHandleRemove} />} />
+              <Route index element={<CategoryManagement/>} />
               <Route path="add" element={<AddCategory onAdd={onHandleAdd} />} />
-              <Route path=":id/update" element={<UpdateProductPage onUpdate={onHandleUpdate} products={products} />} />
+              {/* <Route path=":id/update" element={<UpdateProductPage onUpdate={onHandleUpdate} products={products} />} /> */}
             </Route>
           </Route>
         </Routes>
